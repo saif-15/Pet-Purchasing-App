@@ -6,12 +6,12 @@ class Pet {
   final String title;
   final String description;
   final Color color;
-  Pet({this.title, this.description, this.imageAsset,this.color});
+  Pet({this.title, this.description, this.imageAsset, this.color});
 }
 
-var listOfCats = [
+final List listOfCats = [
   Pet(
-    color: lightBrown,
+      color: lightBrown,
       title: "Persian Cat",
       description:
           "The Persian cat is a long-haired breed of cat characterized by its round face and short muzzle. It is also known as the Persian Longhair in the English-speaking countries. The first documented ancestors of the Persian were imported into Italy from Iran around 1620",
@@ -42,7 +42,7 @@ var listOfCats = [
       description:
           "A Savannah cat is a cross between a domestic cat and a serval, a medium-sized, large-eared wild African cat. The unusual cross became popular among breeders at the end of the 1990s, and in 2001 The International Cat Association (TICA) accepted it as a new registered breed."),
   Pet(
-    color: darkBrown,
+      color: darkBrown,
       title: "Bengal cat",
       imageAsset: "assets/cats/cat5.png",
       description:
@@ -55,3 +55,9 @@ class PetType {
 
   PetType({this.asset, this.title});
 }
+
+final List petTypes = [
+  PetType(title: "Cats", asset: "assets/cats/cat2.png"),
+  PetType(title: "Dogs", asset: "assets/dogs/dog3.png"),
+  PetType(title: "Parrots", asset: "assets/parrots/parrot2.png"),
+];

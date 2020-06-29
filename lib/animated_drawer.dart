@@ -4,12 +4,12 @@ import 'package:flutter/rendering.dart';
 import 'package:pet_purchasing_app/colors.dart';
 import 'package:pet_purchasing_app/model/pet.dart';
 
-class AnimatedDrawer extends StatefulWidget {
+class HomePage extends StatefulWidget {
   @override
-  _AnimatedDrawerState createState() => _AnimatedDrawerState();
+  _HomePageState createState() => _HomePageState();
 }
 
-class _AnimatedDrawerState extends State<AnimatedDrawer> {
+class _HomePageState extends State<HomePage> {
   Offset points = Offset(0.0, 0.0);
   var _scaleFactor = 1.0;
   var isOpen = false;
@@ -24,7 +24,7 @@ class _AnimatedDrawerState extends State<AnimatedDrawer> {
         ..scale(_scaleFactor),
       decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.all(Radius.circular(40.0))),
+          borderRadius: BorderRadius.only(topLeft: Radius.circular(30))),
       child: Container(
         child: Column(
           children: <Widget>[
@@ -124,9 +124,9 @@ class _AnimatedDrawerState extends State<AnimatedDrawer> {
                       height: 130.0,
                       child: ListView.builder(
                         scrollDirection: Axis.horizontal,
-                        itemCount: 10,
+                        itemCount: petTypes.length,
                         itemBuilder: (context, index) {
-                          return PetItems();
+                          return PetItems(type: petTypes[index],);
                         },
                       ),
                     ),
@@ -173,10 +173,9 @@ class _AnimatedDrawerState extends State<AnimatedDrawer> {
 }
 
 class PetItems extends StatelessWidget {
-  final String image;
-  final String title;
+  final PetType type;
 
-  PetItems({this.image, this.title});
+  PetItems({this.type});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -189,11 +188,12 @@ class PetItems extends StatelessWidget {
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(20.0)),
                 color: Colors.white),
+            child: Image.asset(type.asset),
           ),
           SizedBox(
             height: 5,
           ),
-          Text("Cats")
+          Text(type.title)
         ],
       ),
     );

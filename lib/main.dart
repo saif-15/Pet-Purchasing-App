@@ -19,7 +19,7 @@ fontFamily: 'Montserrat'
         body: Stack(
           children: <Widget>[
             MyDrawer(),
-            AnimatedDrawer()
+            HomePage()
           ],
         ),
       ),
