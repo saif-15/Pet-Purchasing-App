@@ -1,6 +1,10 @@
 # pet_purchasing_app
 
 Buy pets with an ease
+Inspired By Driible
+
+![pet_adoption](https://user-images.githubusercontent.com/46129194/86001625-9802cd00-ba28-11ea-83ba-8feeb80fca3f.png)
+
 
 ## Getting Started
 
